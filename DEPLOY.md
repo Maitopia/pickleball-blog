@@ -37,6 +37,16 @@ git branch -M main
 git push -u origin main
 ```
 
+> [!IMPORTANT]
+> **Authentication Error?**
+> If you see `Invalid username or token`, GitHub requires a **Personal Access Token (PAT)** instead of your password.
+> 1. Go to **GitHub Settings** → **Developer Settings** → **Personal Access Tokens** → **Tokens (classic)**.
+> 2. Click **Generate new token (classic)**.
+> 3. Give it a name (e.g., "Pickleball Blog") and select the **`repo`** and **`workflow`** scopes.
+> 4. Copy the token.
+> 5. Run `git push` again. When asked for your password, **paste the token** instead.
+
+
 ## Step 3: Enable GitHub Pages
 
 1. Go to your repository on GitHub
@@ -126,14 +136,25 @@ Examples:
 2. Check if it's running on schedule
 3. Manually trigger to test
 
-### 404 Error
+### 404 Error: "There isn't a GitHub Pages site here"
 
-**Check Pages settings:**
-1. Settings → Pages
-2. Ensure source is "GitHub Actions"
-3. Check that deployment completed successfully
+This error usually means GitHub Pages isn't active yet or is pointing to the wrong source.
 
-## File Structure
+1. **Check Pages Source**:
+   - Go to **Settings** -> **Pages**
+   - Under **Build and deployment**, ensure **Source** is set to **"GitHub Actions"**
+   - Click **Save** if you changed it.
+
+2. **Verify Workflow Status**:
+   - Go to the **Actions** tab.
+   - Look for the **"Deploy to GitHub Pages"** workflow.
+   - If it hasn't run yet, trigger it manually by going to **Actions** -> **Deploy to GitHub Pages** -> **Run workflow**.
+   - Wait for the green checkmark (✅).
+
+3. **Check Repository Visibility**:
+   - Ensure your repository is **Public** (Settings -> General -> Change visibility).
+
+### Other Deployment Issues
 
 ```
 pickleball-blog/

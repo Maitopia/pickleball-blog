@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Pickleball Pulse</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-message {
+            font-size: 24px;
+            color: var(--text);
+            margin: 20px 0;
+        }
+
+        .error-description {
+            color: var(--text-light);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            background: var(--neon-cyan);
+            color: black;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .btn-home:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>🎾 Pickleball Pulse</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Oops! This shot went out of bounds.</p>
+            <p class="error-description">
+                The page you're looking for doesn't exist or has been moved.
+                Don't worry, even the pros miss a dink sometimes.
+            </p>
+            <a href="index.html" class="btn-home">Return to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pickleball Pulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
