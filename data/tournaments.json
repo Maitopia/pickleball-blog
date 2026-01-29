@@ -1,0 +1,72 @@
+{
+  "upcoming": [
+    {
+      "id": "ppa-miami-2026",
+      "name": "PPA Miami Open",
+      "date": "2026-02-14 to 2026-02-16",
+      "location": "Miami, Florida, USA",
+      "venue": "Hard Rock Stadium",
+      "prize": "$250,000",
+      "description": "The PPA Tour kicks off its 2026 season in Miami with expanded draws and increased prize money.",
+      "link": "https://ppatour.com/miami-open",
+      "image": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      "category": "PPA"
+    },
+    {
+      "id": "us-open-2026",
+      "name": "US Open Pickleball Championships",
+      "date": "2026-04-18 to 2026-04-26",
+      "location": "Naples, Florida, USA",
+      "venue": "East Naples Community Park",
+      "prize": "$400,000",
+      "description": "The largest pickleball tournament in the world returns for its 10th anniversary.",
+      "link": "https://usopenpickleballchampionships.com",
+      "image": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      "category": "Major"
+    }
+  ],
+  "past": [
+    {
+      "id": "ppa-indoor-2026",
+      "name": "PPA Indoor National Championships",
+      "date": "2026-01-24 to 2026-01-26",
+      "location": "Lakeville, Minnesota, USA",
+      "venue": "Lakeville Arena",
+      "prize": "$200,000",
+      "description": "Indoor championship featuring climate-controlled play and a sell-out crowd.",
+      "category": "PPA",
+      "results": {
+        "mensSingles": {
+          "gold": "Ben Johns",
+          "silver": "Federico Staksrud",
+          "bronze": "JW Johnson"
+        },
+        "womensSingles": {
+          "gold": "Anna Leigh Waters",
+          "silver": "Catherine Parenteau",
+          "bronze": "Anna Bright"
+        },
+        "mensDoubles": {
+          "gold": "Ben Johns / Collin Johns",
+          "silver": "Dylan Frazier / JW Johnson",
+          "bronze": "Tyson McGuffin / Connor Garnett"
+        },
+        "womensDoubles": {
+          "gold": "Anna Leigh Waters / Catherine Parenteau",
+          "silver": "Anna Bright / Rachel Rohrabacher",
+          "bronze": "Lea Jansen / Jorja Johnson"
+        },
+        "mixed": {
+          "gold": "Anna Leigh Waters / Ben Johns",
+          "silver": "Catherine Parenteau / Riley Newman",
+          "bronze": "Anna Bright / JW Johnson"
+        }
+      },
+      "highlights": [
+        "Ben Johns wins his 15th consecutive singles title",
+        "Anna Leigh Waters dominates with three gold medals",
+        "Record attendance of 8,500 fans over three days"
+      ]
+    }
+  ]
+}

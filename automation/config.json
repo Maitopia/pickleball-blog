@@ -1,0 +1,45 @@
+{
+  "data_sources": {
+    "tournaments": {
+      "enabled": true,
+      "sources": [
+        {
+          "name": "PPA Tour",
+          "url": "https://ppatour.com",
+          "type": "scrape"
+        }
+      ]
+    },
+    "rankings": {
+      "enabled": true,
+      "sources": [
+        {
+          "name": "USA Pickleball",
+          "url": "https://usapickleball.org",
+          "type": "scrape"
+        }
+      ]
+    },
+    "articles": {
+      "enabled": true,
+      "rss_feeds": [
+        "https://www.pickleballmagazine.com/feed/",
+        "https://pickleballcentral.com/blogs/news.atom"
+      ]
+    }
+  },
+  "update_schedule": {
+    "tournaments": "weekly",
+    "rankings": "weekly",
+    "articles": "daily"
+  },
+  "scraping": {
+    "user_agent": "Mozilla/5.0 (compatible; PickleballBlogBot/1.0)",
+    "delay_seconds": 2,
+    "timeout_seconds": 10
+  },
+  "output": {
+    "data_dir": "data",
+    "backup_enabled": true
+  }
+}

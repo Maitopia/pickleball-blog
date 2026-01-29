@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pickleball Pulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎾 Pickleball Pulse</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 60px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="color: var(--pickleball-navy); font-size: 42px; margin-bottom: 15px;">Get In Touch</h1>
+                <p style="color: var(--text-light); font-size: 18px;">
+                    We'd love to hear from you! Whether you have questions, suggestions, or want to contribute content.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+                <!-- Contact Form -->
+                <div
+                    style="background: var(--light-card); padding: 40px; border-radius: 12px; border: 2px solid var(--light-border);">
+                    <h2 style="color: var(--pickleball-navy); margin-bottom: 25px;">Send Us a Message</h2>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <label for="name"
+                                style="display: block; color: var(--text); font-weight: 600; margin-bottom: 8px;">Name
+                                *</label>
+                            <input type="text" id="name" name="name" required
+                                style="width: 100%; padding: 12px; border: 2px solid var(--light-border); border-radius: 8px; font-size: 16px; background: white; color: var(--text);">
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                style="display: block; color: var(--text); font-weight: 600; margin-bottom: 8px;">Email
+                                *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 12px; border: 2px solid var(--light-border); border-radius: 8px; font-size: 16px; background: white; color: var(--text);">
+                        </div>
+
+                        <div>
+                            <label for="subject"
+                                style="display: block; color: var(--text); font-weight: 600; margin-bottom: 8px;">Subject
+                                *</label>
+                            <input type="text" id="subject" name="subject" required
+                                style="width: 100%; padding: 12px; border: 2px solid var(--light-border); border-radius: 8px; font-size: 16px; background: white; color: var(--text);">
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                style="display: block; color: var(--text); font-weight: 600; margin-bottom: 8px;">Message
+                                *</label>
+                            <textarea id="message" name="message" rows="6" required
+                                style="width: 100%; padding: 12px; border: 2px solid var(--light-border); border-radius: 8px; font-size: 16px; background: white; color: var(--text); resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            style="background: var(--pickleball-blue); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                            onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-2px)'"
+                            onmouseout="this.style.background='var(--pickleball-blue)'; this.style.transform='translateY(0)'">
+                            Send Message →
+                        </button>
+                    </form>
+
+                    <div id="formMessage" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none;">
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div
+                    style="background: var(--light-card); padding: 40px; border-radius: 12px; border: 2px solid var(--light-border);">
+                    <h2 style="color: var(--pickleball-navy); margin-bottom: 25px;">Other Ways to Reach Us</h2>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3
+                            style="color: var(--pickleball-blue); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            📧 Email
+                        </h3>
+                        <p style="color: var(--text); line-height: 1.6;">
+                            For general inquiries: <a href="mailto:pickleballpulse.contact@gmail.com"
+                                style="color: var(--pickleball-blue);">pickleballpulse.contact@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3
+                            style="color: var(--pickleball-blue); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            💼 Business Inquiries
+                        </h3>
+                        <p style="color: var(--text); line-height: 1.6;">
+                            For partnerships and advertising: <a href="mailto:pickleballpulse.contact@gmail.com"
+                                style="color: var(--pickleball-blue);">pickleballpulse.contact@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3
+                            style="color: var(--pickleball-blue); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            ✍️ Contribute
+                        </h3>
+                        <p style="color: var(--text); line-height: 1.6;">
+                            Want to write for us? Send your pitch to: <a href="mailto:pickleballpulse.contact@gmail.com"
+                                style="color: var(--pickleball-blue);">pickleballpulse.contact@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3
+                            style="color: var(--pickleball-blue); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            🌐 Social Media
+                        </h3>
+                        <p style="color: var(--text); line-height: 1.6;">
+                            Follow us for daily updates and pickleball news
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Your source for pickleball news, tournaments, and rankings.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Stay updated with the latest pickleball news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pickleball Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'block';
+            formMessage.style.background = 'var(--pickleball-green)';
+            formMessage.style.color = 'white';
+            formMessage.textContent = '✓ Thank you for your message! We\'ll get back to you soon.';
+
+            // Reset form
+            this.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>

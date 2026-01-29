@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball Pulse - Your Pickleball News Source</title>
+    <meta name="description"
+        content="Your premier source for pickleball news, tournament coverage, player rankings, and expert tips. Stay updated with the latest from the pickleball world.">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense - Replace YOUR_ADSENSE_ID with your actual AdSense publisher ID -->
+    <!-- Uncomment when you have your AdSense account approved -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🎾 Pickleball Pulse</h1>
+                <p class="tagline">Stay Ahead of the Game</p>
+            </div>
+            <nav>
+                <a href="#" onclick="showHome(event)">Home</a>
+                <a href="#" onclick="showRankings(event)">🏆 Rankings</a>
+                <a href="#" onclick="showTournaments(event)">🎾 Tournaments</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" onclick="showAdmin(event)" class="admin-btn">✏️ Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home View -->
+        <div id="home-view">
+            <section class="hero" id="hero-section">
+                <div class="hero-content">
+                    <span class="badge">Featured</span>
+                    <h2 id="hero-title">The 5 Most Common Mistakes Intermediate Players Make</h2>
+                    <p class="excerpt" id="hero-excerpt">You've graduated from beginner status, but these habits might
+                        be holding you back from 4.0 and beyond.</p>
+                    <div class="meta">
+                        <span class="author" id="hero-author">By Sarah Mitchell</span>
+                        <span class="date" id="hero-date">January 27, 2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AdSense Placement: Top Banner (728x90 or responsive) -->
+            <div class="ad-container"
+                style="text-align: center; margin: 40px 0; padding: 20px; background: var(--light-bg); border-radius: 8px; border: 2px dashed var(--light-border);">
+                <p style="color: var(--text-light); font-size: 12px; margin-bottom: 10px;">Advertisement</p>
+                <!-- Replace with actual AdSense code when approved -->
+                <div
+                    style="min-height: 90px; display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+                    [AdSense Top Banner - 728x90]<br>
+                    <small>Replace this with your AdSense code</small>
+                </div>
+                <!-- Actual AdSense code will look like:
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                -->
+            </div>
+
+            <h3 class="section-title">Latest Articles</h3>
+
+            <div class="articles-grid" id="articles-grid">
+                <!-- Articles will be loaded here dynamically -->
+            </div>
+
+            <section class="newsletter">
+                <h3>Get the Daily Dink</h3>
+                <p>Subscribe to our newsletter for daily pickleball news, tips, and strategies delivered to your inbox.
+                </p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+
+            <!-- AdSense Placement: Sidebar Ad (300x600 or responsive) -->
+            <div class="ad-container"
+                style="text-align: center; margin: 40px 0; padding: 20px; background: var(--light-bg); border-radius: 8px; border: 2px dashed var(--light-border);">
+                <p style="color: var(--text-light); font-size: 12px; margin-bottom: 10px;">Advertisement</p>
+                <div
+                    style="min-height: 250px; display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+                    [AdSense Sidebar - 300x250]<br>
+                    <small>Replace this with your AdSense code</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article View -->
+        <div id="article-view" class="hidden">
+            <a href="#" class="back-link" onclick="showHome(event)">← Back to articles</a>
+            <article class="article-view">
+                <div class="meta" id="article-meta"></div>
+                <h1 id="article-title"></h1>
+                <div class="article-body" id="article-body"></div>
+            </article>
+        </div>
+
+        <!-- Tournaments View -->
+        <div id="tournaments-view" class="hidden">
+            <div class="tournaments-panel">
+                <h2>Pickleball Tournaments</h2>
+                <p style="color: var(--text-light); margin-bottom: 30px;">Stay updated with the latest tournament
+                    results and upcoming events</p>
+
+                <div class="tournament-filters">
+                    <button class="tournament-filter active" onclick="switchTournaments('upcoming')">📅
+                        Upcoming</button>
+                    <button class="tournament-filter" onclick="switchTournaments('past')">🏆 Past Results</button>
+                </div>
+
+                <div id="tournaments-content"></div>
+            </div>
+        </div>
+
+        <!-- Rankings View -->
+        <div id="rankings-view" class="hidden">
+            <div class="rankings-panel">
+                <h2 id="ranking-title">Men's Singles</h2>
+                <p style="color: var(--text-light); margin-bottom: 30px;">Official world rankings updated weekly</p>
+
+                <div class="ranking-filters">
+                    <button class="ranking-filter active" onclick="switchRanking('mensSingles')">Men's Singles</button>
+                    <button class="ranking-filter" onclick="switchRanking('womensSingles')">Women's Singles</button>
+                    <button class="ranking-filter" onclick="switchRanking('mensDoubles')">Men's Doubles</button>
+                    <button class="ranking-filter" onclick="switchRanking('womensDoubles')">Women's Doubles</button>
+                    <button class="ranking-filter" onclick="switchRanking('mixed')">Mixed Doubles</button>
+                    <button class="ranking-filter" onclick="switchRanking('seniors50')">Seniors 50+</button>
+                    <button class="ranking-filter" onclick="switchRanking('juniors')">Juniors U19</button>
+                </div>
+
+                <div id="rankings-table"></div>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="admin-view" class="hidden">
+            <div class="admin-panel">
+                <h2>📝 Create/Edit Article</h2>
+                <form id="article-form" onsubmit="handleArticleSubmit(event)">
+                    <input type="hidden" id="article-id">
+
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="excerpt">Excerpt</label>
+                        <textarea id="excerpt" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="Strategy">Strategy</option>
+                            <option value="News">News</option>
+                            <option value="Equipment">Equipment</option>
+                            <option value="Tips">Tips</option>
+                            <option value="Player Profile">Player Profile</option>
+                            <option value="Analysis">Analysis</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Article Content</label>
+                        <textarea id="content" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gradient">Card Gradient (CSS gradient)</label>
+                        <input type="text" id="gradient" placeholder="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="featured"> Featured Article
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Publish Article</button>
+                </form>
+            </div>
+
+            <div class="admin-panel">
+                <h2>📚 Manage Articles</h2>
+                <div id="articles-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pickleball Pulse</h4>
+                    <p>Your trusted source for pickleball news, strategy, and community.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Strategy</a></li>
+                        <li><a href="#">Equipment</a></li>
+                        <li><a href="#">Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pickleball Pulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cms.js"></script>
+    <script src="rankings.js"></script>
+    <script src="tournaments.js"></script>
+    <script src="auto-refresh.js"></script>
+    <script src="refresh-indicator.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
