@@ -4,33 +4,33 @@
 const REFRESH_CONFIG = {
     rankings: {
         enabled: true,
-        intervalHours: 24, // Refresh every 24 hours
-        apiUrl: null // Set to your API endpoint if you have one
+        intervalHours: 1,
+        apiUrl: 'data/rankings.json'
     },
     tournaments: {
         enabled: true,
-        intervalHours: 24,
-        apiUrl: null
+        intervalHours: 1,
+        apiUrl: 'data/tournaments.json'
     },
     articles: {
-        enabled: false, // Articles are manually managed via CMS
-        intervalHours: 0,
-        apiUrl: null
+        enabled: true,
+        intervalHours: 1,
+        apiUrl: 'data/articles.json'
     }
 };
 
 // Check if data needs refresh
 function needsRefresh(lastRefreshKey, intervalHours) {
     const lastRefresh = localStorage.getItem(lastRefreshKey);
-    
+
     if (!lastRefresh) {
         return true; // Never refreshed before
     }
-    
+
     const lastRefreshTime = new Date(lastRefresh);
     const now = new Date();
     const hoursSinceRefresh = (now - lastRefreshTime) / (1000 * 60 * 60);
-    
+
     return hoursSinceRefresh >= intervalHours;
 }
 
@@ -42,12 +42,12 @@ function markRefreshed(lastRefreshKey) {
 // Fetch fresh data from API (if configured)
 async function fetchFreshData(type) {
     const config = REFRESH_CONFIG[type];
-    
+
     if (!config || !config.apiUrl) {
         console.log(`No API configured for ${type}. Using default data.`);
         return null;
     }
-    
+
     try {
         const response = await fetch(config.apiUrl);
         if (!response.ok) {
@@ -64,24 +64,24 @@ async function fetchFreshData(type) {
 // Refresh rankings data
 async function refreshRankings() {
     if (!REFRESH_CONFIG.rankings.enabled) return;
-    
+
     if (!needsRefresh('rankings_last_refresh', REFRESH_CONFIG.rankings.intervalHours)) {
         console.log('Rankings data is fresh. Skipping refresh.');
         return;
     }
-    
+
     console.log('Refreshing rankings data...');
-    
+
     // Try to fetch from API
     const freshData = await fetchFreshData('rankings');
-    
+
     if (freshData) {
         localStorage.setItem('rankings', JSON.stringify(freshData));
         console.log('Rankings updated from API');
     } else {
         // Simulate rank changes in default data (for demo purposes)
         const rankings = JSON.parse(localStorage.getItem('rankings') || '{}');
-        
+
         // Add some randomness to rank changes
         Object.keys(rankings).forEach(category => {
             if (Array.isArray(rankings[category])) {
@@ -91,28 +91,28 @@ async function refreshRankings() {
                 });
             }
         });
-        
+
         localStorage.setItem('rankings', JSON.stringify(rankings));
         console.log('Rankings updated with simulated changes');
     }
-    
+
     markRefreshed('rankings_last_refresh');
 }
 
 // Refresh tournaments data
 async function refreshTournaments() {
     if (!REFRESH_CONFIG.tournaments.enabled) return;
-    
+
     if (!needsRefresh('tournaments_last_refresh', REFRESH_CONFIG.tournaments.intervalHours)) {
         console.log('Tournaments data is fresh. Skipping refresh.');
         return;
     }
-    
+
     console.log('Refreshing tournaments data...');
-    
+
     // Try to fetch from API
     const freshData = await fetchFreshData('tournaments');
-    
+
     if (freshData) {
         localStorage.setItem('tournaments', JSON.stringify(freshData));
         console.log('Tournaments updated from API');
@@ -120,7 +120,7 @@ async function refreshTournaments() {
         // Move past tournaments if dates have passed
         const tournaments = JSON.parse(localStorage.getItem('tournaments') || '{"upcoming":[],"past":[]}');
         const now = new Date();
-        
+
         // Check if any upcoming tournaments should be moved to past
         const stillUpcoming = [];
         tournaments.upcoming.forEach(tournament => {
@@ -132,24 +132,49 @@ async function refreshTournaments() {
                 console.log(`Tournament "${tournament.name}" has ended. Moving to past.`);
             }
         });
-        
+
         tournaments.upcoming = stillUpcoming;
         localStorage.setItem('tournaments', JSON.stringify(tournaments));
         console.log('Tournaments updated (dates checked)');
     }
-    
+
     markRefreshed('tournaments_last_refresh');
+}
+
+// Refresh articles data
+async function refreshArticles() {
+    if (!REFRESH_CONFIG.articles.enabled) return;
+
+    if (!needsRefresh('articles_last_refresh', REFRESH_CONFIG.articles.intervalHours)) {
+        console.log('Articles data is fresh. Skipping refresh.');
+        return;
+    }
+
+    console.log('Refreshing articles data...');
+
+    // Try to fetch from API
+    const freshData = await fetchFreshData('articles');
+
+    if (freshData && freshData.length > 0) {
+        localStorage.setItem('articles', JSON.stringify(freshData));
+        console.log('Articles updated from API');
+    } else {
+        console.log('No new articles fetched or API failed. Keeping existing data.');
+    }
+
+    markRefreshed('articles_last_refresh');
 }
 
 // Refresh all enabled data sources
 async function refreshAll() {
     console.log('🔄 Starting auto-refresh check...');
-    
+
     await refreshRankings();
     await refreshTournaments();
-    
+    await refreshArticles();
+
     console.log('✅ Auto-refresh complete');
-    
+
     // Update last check time
     localStorage.setItem('last_auto_refresh', new Date().toISOString());
 }
@@ -167,20 +192,20 @@ function getRefreshStatus() {
             nextRefresh: null
         }
     };
-    
+
     // Calculate next refresh times
     if (status.rankings.lastRefresh) {
         const next = new Date(status.rankings.lastRefresh);
         next.setHours(next.getHours() + REFRESH_CONFIG.rankings.intervalHours);
         status.rankings.nextRefresh = next.toISOString();
     }
-    
+
     if (status.tournaments.lastRefresh) {
         const next = new Date(status.tournaments.lastRefresh);
         next.setHours(next.getHours() + REFRESH_CONFIG.tournaments.intervalHours);
         status.tournaments.nextRefresh = next.toISOString();
     }
-    
+
     return status;
 }
 
@@ -195,7 +220,7 @@ function forceRefresh() {
 document.addEventListener('DOMContentLoaded', () => {
     // Run initial refresh check
     refreshAll();
-    
+
     // Set up periodic checks (every hour)
     setInterval(() => {
         refreshAll();

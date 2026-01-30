@@ -23,8 +23,9 @@
     "articles": {
       "enabled": true,
       "rss_feeds": [
-        "https://www.pickleballmagazine.com/feed/",
-        "https://pickleballcentral.com/blogs/news.atom"
+        "https://thedinkpickleball.com/rss",
+        "https://usapickleball.org/feed/",
+        "https://pickleballmax.com/feed/"
       ]
     }
   },

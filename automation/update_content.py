@@ -60,6 +60,10 @@ class ContentUpdater:
         try:
             articles = fetch_rss_articles(rss_feeds, max_articles=5)
             print(f"  Fetched {len(articles)} articles from RSS feeds")
+            
+            if not articles:
+                print("  No articles found in RSS feeds. Generating samples instead.")
+                articles = generate_sample_articles()
         except Exception as e:
             print(f"  Error fetching RSS articles: {e}")
             print("  Using sample articles instead")
