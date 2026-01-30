@@ -249,13 +249,16 @@ function viewArticle(id) {
         <span class="date">${formatDate(article.date)}</span>
     `;
 
-    // Convert content to HTML (simple markdown-like conversion)
-    const htmlContent = article.content
-        .replace(/## (.*)/g, '<h2>$1</h2>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\n\n/g, '</p><p>')
-        .replace(/^(.)/g, '<p>$1')
-        .replace(/(.)\n$/, '$1</p>');
+    // Convert content to HTML if it's not already HTML
+    let htmlContent = article.content;
+    if (!htmlContent.trim().startsWith('<')) {
+        htmlContent = htmlContent
+            .replace(/## (.*)/g, '<h2>$1</h2>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/^(.)/g, '<p>$1')
+            .replace(/(.)\n$/, '$1</p>');
+    }
 
     document.getElementById('article-body').innerHTML = htmlContent;
 
@@ -265,7 +268,6 @@ function viewArticle(id) {
             <div class="source-attribution" style="margin-top: 40px; padding: 25px; background: var(--light-card); border-radius: 12px; border-left: 4px solid var(--pickleball-blue);">
                 <p style="margin-bottom: 15px; color: var(--text-light); font-style: italic;">
                     This article was originally published by <strong>${article.source_name || 'the original source'}</strong>. 
-                    We have provided a summary below for your convenience.
                 </p>
                 <a href="${article.source_url}" target="_blank" class="admin-btn" style="display: inline-block; text-decoration: none;">
                     Read Full Article at Source →
@@ -277,6 +279,14 @@ function viewArticle(id) {
 
     window.scrollTo(0, 0);
 }
+
+// Listen for data refreshes from auto-refresh.js
+window.addEventListener('pickleball-data-refreshed', (e) => {
+    if (e.detail.type === 'articles') {
+        console.log('🔄 Articles refreshed, updating UI...');
+        renderArticles();
+    }
+});
 
 // Show home view
 function showHome(e) {
@@ -445,6 +455,8 @@ function formatDate(dateStr) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Force a clear of articles on load to ensure we get the latest from JSON
+    // but ONLY if it's been more than an hour since last refresh
     initDefaultArticles();
     renderArticles();
     initAuth();

@@ -37,6 +37,10 @@ function needsRefresh(lastRefreshKey, intervalHours) {
 // Mark data as refreshed
 function markRefreshed(lastRefreshKey) {
     localStorage.setItem(lastRefreshKey, new Date().toISOString());
+    // Dispatch event so other scripts know data changed
+    window.dispatchEvent(new CustomEvent('pickleball-data-refreshed', {
+        detail: { type: lastRefreshKey.replace('_last_refresh', '') }
+    }));
 }
 
 // Fetch fresh data from API (if configured)
