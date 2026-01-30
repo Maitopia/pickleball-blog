@@ -27,7 +27,7 @@
                 <a href="#" onclick="showTournaments(event)">🎾 Tournaments</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="#" onclick="showAdmin(event)" class="admin-btn">✏️ Admin</a>
+                <a href="#" id="admin-nav-btn" onclick="showAdmin(event)" class="admin-btn hidden">✏️ Admin</a>
             </nav>
         </div>
     </header>
@@ -149,7 +149,11 @@
         <!-- Admin Panel -->
         <div id="admin-view" class="hidden">
             <div class="admin-panel">
-                <h2>📝 Create/Edit Article</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <h2 style="margin: 0;">📝 Create/Edit Article</h2>
+                    <button onclick="handleLogout(event)" class="btn-primary"
+                        style="background: #ff6b35;">Logout</button>
+                </div>
                 <form id="article-form" onsubmit="handleArticleSubmit(event)">
                     <input type="hidden" id="article-id">
 
@@ -230,6 +234,8 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#" onclick="handleLogin(event)" style="font-size: 10px; opacity: 0.5;">Staff
+                                Login</a></li>
                     </ul>
                 </div>
             </div>

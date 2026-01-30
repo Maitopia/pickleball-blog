@@ -615,63 +615,106 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    header {
+        position: sticky !important;
+        top: 0 !important;
+        padding: 5px 0 !important;
+        background: var(--light-card) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    }
+
     header .container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        padding: 0 15px !important;
+    }
+
+    .logo h1 {
+        font-size: 16px !important;
+        white-space: nowrap;
+    }
+
+    .tagline {
+        display: none !important;
     }
 
     nav {
-        gap: 20px;
-        flex-direction: column;
+        flex-direction: row !important;
+        gap: 10px !important;
+        flex-grow: 1;
+        justify-content: space-around !important;
+        padding: 0 !important;
+    }
+
+    nav a {
+        font-size: 11px !important;
+        padding: 4px 6px !important;
+        width: auto !important;
+        border-bottom: none !important;
+        white-space: nowrap;
+    }
+
+    .admin-btn {
+        padding: 3px 8px !important;
+        font-size: 10px !important;
+        border-radius: 12px !important;
+        margin-top: 0 !important;
     }
 
     .hero {
-        padding: 40px 24px;
+        padding: 20px !important;
+        margin: 10px 0 !important;
     }
 
     .hero h2 {
-        font-size: 28px;
-    }
-
-    .articles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .newsletter {
-        padding: 30px 20px;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
+        font-size: 20px !important;
     }
 
     .article-view,
     .admin-panel,
     .rankings-panel,
     .tournaments-panel {
-        padding: 30px 20px;
-    }
-
-    .article-view h1 {
-        font-size: 32px;
+        padding: 15px 10px !important;
     }
 
     .ranking-filters,
     .tournament-filters {
-        flex-direction: column;
+        flex-direction: row !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 5px !important;
+        overflow-x: auto !important;
+        scrollbar-width: none;
+        padding: 10px 0 !important;
+        position: sticky !important;
+        top: 45px !important;
+        /* Below the main header */
+        background: var(--light-bg) !important;
+        z-index: 90;
+        margin-bottom: 20px !important;
+    }
+
+    .ranking-filters::-webkit-scrollbar,
+    .tournament-filters::-webkit-scrollbar {
+        display: none;
     }
 
     .ranking-filter,
     .tournament-filter {
-        width: 100%;
+        flex: 1 !important;
+        min-width: fit-content !important;
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        white-space: nowrap;
     }
 
     #rankings-table table {
-        font-size: 14px;
+        font-size: 11px !important;
     }
 
     #rankings-table th,
     #rankings-table td {
-        padding: 10px 8px !important;
+        padding: 4px 2px !important;
     }
 }
