@@ -54,17 +54,30 @@ def fetch_rss_articles(feed_urls: List[str], max_articles: int = 10) -> List[Dic
                 if hasattr(entry, 'tags') and entry.tags:
                     category = entry.tags[0].term
                 
+                # Clean excerpt and content for fair use (only snippets)
+                summary = entry.get('summary', '')
+                if not summary and 'content' in entry:
+                    summary = entry.content[0].value
+                
+                # Limit excerpt length for the card
+                excerpt = (summary[:180] + '...') if len(summary) > 180 else summary
+                
+                # We store a slightly longer preview for the article view, 
+                # but NOT the full article to respect copyright and encourage clicks to source
+                preview_content = (summary[:800] + '...') if len(summary) > 800 else summary
+
                 article = {
                     'id': article_id,
                     'title': entry.title,
-                    'excerpt': entry.get('summary', '')[:200] + '...',
-                    'content': entry.get('content', [{}])[0].get('value', entry.get('summary', '')),
+                    'excerpt': excerpt,
+                    'content': preview_content,
                     'author': entry.get('author', 'Staff Writer'),
                     'date': date_str,
                     'category': category,
                     'featured': False,
                     'gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    'source_url': entry.link
+                    'source_url': entry.link,
+                    'source_name': feed.feed.get('title', 'Original Source')
                 }
                 
                 articles.append(article)
