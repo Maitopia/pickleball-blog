@@ -662,13 +662,37 @@ footer {
         margin-top: 0 !important;
     }
 
+    /* Centering Modules in Body */
     .hero {
         padding: 20px !important;
         margin: 10px 0 !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-content {
+        margin: 0 auto !important;
     }
 
     .hero h2 {
         font-size: 20px !important;
+    }
+
+    .section-title {
+        text-align: center !important;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+    }
+
+    .article-card {
+        max-width: 400px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .article-view,
@@ -676,41 +700,61 @@ footer {
     .rankings-panel,
     .tournaments-panel {
         padding: 15px 10px !important;
+        text-align: center !important;
+    }
+
+    .article-view h1 {
+        font-size: 24px !important;
     }
 
     .ranking-filters,
     .tournament-filters {
         flex-direction: row !important;
         display: flex !important;
-        justify-content: space-between !important;
+        justify-content: center !important;
         gap: 5px !important;
         overflow-x: auto !important;
         scrollbar-width: none;
         padding: 10px 0 !important;
         position: sticky !important;
         top: 45px !important;
-        /* Below the main header */
         background: var(--light-bg) !important;
         z-index: 90;
         margin-bottom: 20px !important;
     }
 
-    .ranking-filters::-webkit-scrollbar,
-    .tournament-filters::-webkit-scrollbar {
-        display: none;
-    }
-
     .ranking-filter,
     .tournament-filter {
-        flex: 1 !important;
+        flex: 0 0 auto !important;
         min-width: fit-content !important;
-        padding: 6px 10px !important;
+        padding: 6px 12px !important;
         font-size: 11px !important;
-        white-space: nowrap;
+    }
+
+    /* Newsletter Form Stacking */
+    .newsletter {
+        padding: 30px 20px !important;
+        text-align: center !important;
+    }
+
+    .newsletter-form {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100% !important;
+        margin: 0 !important;
     }
 
     #rankings-table table {
         font-size: 11px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     #rankings-table th,
