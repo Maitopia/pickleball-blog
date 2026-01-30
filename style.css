@@ -641,10 +641,11 @@ footer {
 
     nav {
         flex-direction: row !important;
-        gap: 10px !important;
-        flex-grow: 1;
-        justify-content: space-around !important;
-        padding: 0 !important;
+        gap: 8px !important;
+        width: 100% !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        padding: 5px 0 !important;
     }
 
     nav a {
@@ -653,13 +654,17 @@ footer {
         width: auto !important;
         border-bottom: none !important;
         white-space: nowrap;
+        display: inline-block !important;
+        text-align: center !important;
     }
 
     .admin-btn {
         padding: 3px 8px !important;
         font-size: 10px !important;
         border-radius: 12px !important;
-        margin-top: 0 !important;
+        margin: 5px auto 0 !important;
+        display: block !important;
+        width: fit-content !important;
     }
 
     /* Centering Modules in Body */
