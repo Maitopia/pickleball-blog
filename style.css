@@ -666,7 +666,8 @@ footer {
         font-size: 10px !important;
         border-radius: 12px !important;
         margin: 5px 0 0 !important;
-        display: inline-block !important;
+        display: inline-block;
+        /* Remove !important */
         width: fit-content !important;
     }
 
