@@ -2,43 +2,43 @@
   "mensSingles": [
     {
       "rank": 1,
-      "name": "Ben Johns",
-      "country": "USA",
-      "points": 2850,
-      "age": 24,
-      "change": 0
-    },
-    {
-      "rank": 2,
       "name": "Federico Staksrud",
       "country": "ARG",
-      "points": 2720,
+      "points": 3150,
       "age": 22,
       "change": 1
     },
     {
-      "rank": 3,
-      "name": "JW Johnson",
+      "rank": 2,
+      "name": "Hunter Johnson",
       "country": "USA",
-      "points": 2680,
-      "age": 26,
-      "change": -1
+      "points": 3020,
+      "age": 29,
+      "change": 1
+    },
+    {
+      "rank": 3,
+      "name": "Christopher Haworth",
+      "country": "USA",
+      "points": 2890,
+      "age": 30,
+      "change": 1
     },
     {
       "rank": 4,
-      "name": "Dylan Frazier",
+      "name": "Ben Johns",
       "country": "USA",
-      "points": 2550,
-      "age": 25,
-      "change": 0
+      "points": 2850,
+      "age": 24,
+      "change": -3
     },
     {
       "rank": 5,
-      "name": "Tyson McGuffin",
+      "name": "JW Johnson",
       "country": "USA",
-      "points": 2480,
-      "age": 34,
-      "change": 2
+      "points": 2780,
+      "age": 26,
+      "change": -1
     }
   ],
   "womensSingles": [
@@ -46,7 +46,7 @@
       "rank": 1,
       "name": "Anna Leigh Waters",
       "country": "USA",
-      "points": 2920,
+      "points": 3450,
       "age": 17,
       "change": 0
     },
@@ -54,7 +54,7 @@
       "rank": 2,
       "name": "Catherine Parenteau",
       "country": "CAN",
-      "points": 2750,
+      "points": 2980,
       "age": 31,
       "change": 0
     },
@@ -62,25 +62,25 @@
       "rank": 3,
       "name": "Anna Bright",
       "country": "USA",
-      "points": 2680,
+      "points": 2850,
       "age": 24,
-      "change": 1
+      "change": 0
     },
     {
       "rank": 4,
       "name": "Lea Jansen",
       "country": "USA",
-      "points": 2620,
+      "points": 2720,
       "age": 28,
-      "change": -1
+      "change": 0
     },
     {
       "rank": 5,
-      "name": "Rachel Rohrabacher",
+      "name": "Parris Todd",
       "country": "USA",
-      "points": 2550,
-      "age": 29,
-      "change": 0
+      "points": 2650,
+      "age": 25,
+      "change": 2
     }
   ],
   "mensDoubles": [
@@ -88,7 +88,7 @@
       "rank": 1,
       "name": "Ben Johns / Collin Johns",
       "country": "USA",
-      "points": 3100,
+      "points": 3200,
       "age": "24/26",
       "change": 0
     },
@@ -96,33 +96,33 @@
       "rank": 2,
       "name": "Dylan Frazier / JW Johnson",
       "country": "USA",
-      "points": 2950,
+      "points": 3050,
       "age": "25/26",
       "change": 0
     },
     {
       "rank": 3,
-      "name": "Riley Newman / Matt Wright",
-      "country": "USA",
-      "points": 2820,
-      "age": "30/28",
+      "name": "Hayden Patriquin / Federico Staksrud",
+      "country": "CAN/ARG",
+      "points": 2920,
+      "age": "25/22",
       "change": 1
     },
     {
       "rank": 4,
-      "name": "Tyson McGuffin / Connor Garnett",
-      "country": "USA",
-      "points": 2780,
-      "age": "34/24",
-      "change": -1
+      "name": "Andrei Daescu / Gabe Tardio",
+      "country": "ROM/USA",
+      "points": 2880,
+      "age": "28/22",
+      "change": 1
     },
     {
       "rank": 5,
-      "name": "Federico Staksrud / Jay Devilliers",
-      "country": "ARG/USA",
-      "points": 2720,
-      "age": "22/28",
-      "change": 0
+      "name": "Riley Newman / Matt Wright",
+      "country": "USA",
+      "points": 2820,
+      "age": "30/28",
+      "change": -2
     }
   ],
   "womensDoubles": [
@@ -130,7 +130,7 @@
       "rank": 1,
       "name": "Anna Leigh Waters / Catherine Parenteau",
       "country": "USA/CAN",
-      "points": 3150,
+      "points": 3350,
       "age": "17/31",
       "change": 0
     },
@@ -138,7 +138,7 @@
       "rank": 2,
       "name": "Anna Bright / Rachel Rohrabacher",
       "country": "USA",
-      "points": 2880,
+      "points": 3020,
       "age": "24/29",
       "change": 0
     },
@@ -146,24 +146,24 @@
       "rank": 3,
       "name": "Lea Jansen / Jorja Johnson",
       "country": "USA",
-      "points": 2790,
+      "points": 2890,
       "age": "28/27",
       "change": 0
     },
     {
       "rank": 4,
-      "name": "Callie Smith / Lucy Kovalova",
+      "name": "Tyra Black / Parris Todd",
       "country": "USA",
-      "points": 2720,
-      "age": "32/33",
+      "points": 2780,
+      "age": "25/25",
       "change": 1
     },
     {
       "rank": 5,
-      "name": "Jessie Irvine / Vivienne David",
+      "name": "Jade Kawamoto / Jackie Kawamoto",
       "country": "USA",
-      "points": 2680,
-      "age": "25/29",
+      "points": 2720,
+      "age": "27/27",
       "change": -1
     }
   ],
@@ -172,41 +172,41 @@
       "rank": 1,
       "name": "Anna Leigh Waters / Ben Johns",
       "country": "USA",
-      "points": 3200,
+      "points": 3500,
       "age": "17/24",
       "change": 0
     },
     {
       "rank": 2,
+      "name": "Jorja Johnson / JW Johnson",
+      "country": "USA",
+      "points": 3120,
+      "age": "27/26",
+      "change": 1
+    },
+    {
+      "rank": 3,
+      "name": "Anna Bright / Hayden Patriquin",
+      "country": "USA/CAN",
+      "points": 2980,
+      "age": "24/25",
+      "change": -1
+    },
+    {
+      "rank": 4,
       "name": "Catherine Parenteau / Riley Newman",
       "country": "CAN/USA",
-      "points": 2980,
+      "points": 2920,
       "age": "31/30",
       "change": 0
     },
     {
-      "rank": 3,
-      "name": "Anna Bright / JW Johnson",
+      "rank": 5,
+      "name": "Tyra Black / Christian Alshon",
       "country": "USA",
       "points": 2850,
-      "age": "24/26",
-      "change": 0
-    },
-    {
-      "rank": 4,
-      "name": "Lea Jansen / Dylan Frazier",
-      "country": "USA",
-      "points": 2790,
-      "age": "28/25",
-      "change": 1
-    },
-    {
-      "rank": 5,
-      "name": "Rachel Rohrabacher / Matt Wright",
-      "country": "USA",
-      "points": 2720,
-      "age": "29/28",
-      "change": -1
+      "age": "25/25",
+      "change": 2
     }
   ],
   "seniors50": [
@@ -214,7 +214,7 @@
       "rank": 1,
       "name": "Steve Paranto",
       "country": "USA",
-      "points": 2650,
+      "points": 2750,
       "age": 55,
       "change": 0
     },
@@ -222,7 +222,7 @@
       "rank": 2,
       "name": "Mark Renneson",
       "country": "CAN",
-      "points": 2580,
+      "points": 2680,
       "age": 52,
       "change": 0
     },
@@ -232,64 +232,64 @@
       "country": "USA",
       "points": 2520,
       "age": 53,
-      "change": 1
+      "change": 0
     },
     {
       "rank": 4,
-      "name": "Tony Roig",
+      "name": "Daniel Moore",
       "country": "USA",
       "points": 2480,
-      "age": 51,
-      "change": -1
+      "age": 54,
+      "change": 0
     },
     {
       "rank": 5,
-      "name": "Daniel Moore",
+      "name": "Tom Sather",
       "country": "USA",
-      "points": 2450,
-      "age": 54,
+      "points": 2420,
+      "age": 51,
       "change": 0
     }
   ],
   "juniors": [
     {
       "rank": 1,
-      "name": "Rafa Hewett",
+      "name": "Jack Foster",
       "country": "USA",
-      "points": 2420,
-      "age": 19,
-      "change": 0
+      "points": 2550,
+      "age": 16,
+      "change": 1
     },
     {
       "rank": 2,
       "name": "Ava Ignatowich",
       "country": "USA",
-      "points": 2380,
+      "points": 2480,
       "age": 15,
       "change": 1
     },
     {
       "rank": 3,
-      "name": "Jack Foster",
+      "name": "Meghan Harwick",
       "country": "USA",
-      "points": 2350,
-      "age": 16,
-      "change": -1
+      "points": 2420,
+      "age": 17,
+      "change": 1
     },
     {
       "rank": 4,
-      "name": "Meghan Harwick",
-      "country": "USA",
-      "points": 2320,
+      "name": "Jack Munro",
+      "country": "CAN",
+      "points": 2350,
       "age": 17,
-      "change": 0
+      "change": -3
     },
     {
       "rank": 5,
-      "name": "Christian Alshon",
+      "name": "Emma Sakas",
       "country": "USA",
       "points": 2280,
-      "age": 18,
+      "age": 16,
       "change": 0
     }
   ]

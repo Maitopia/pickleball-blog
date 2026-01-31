@@ -1,133 +1,162 @@
 {
   "upcoming": [
     {
-      "id": "ppa-miami-2026",
-      "name": "PPA Miami Open",
-      "date": "2026-02-14 to 2026-02-16",
-      "location": "Miami, Florida, USA",
-      "venue": "Hard Rock Stadium",
-      "prize": "$250,000",
-      "description": "The PPA Tour kicks off its 2026 season in Miami with expanded draws and increased prize money.",
-      "link": "https://ppatour.com/miami-open",
+      "id": "ppa-cape-coral-2026",
+      "name": "PPA Zimmer Biomet Cape Coral Open",
+      "date": "2026-02-09 to 2026-02-15",
+      "location": "Cape Coral, Florida, USA",
+      "venue": "Cape Coral Pickleball Center",
+      "description": "The PPA Tour heads to Southwest Florida for the Cape Coral Open. Expect high-intensity play in the Florida sunshine.",
+      "link": "https://ppatour.com",
       "image": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       "category": "PPA"
     },
     {
-      "id": "us-open-2026",
-      "name": "US Open Pickleball Championships",
-      "date": "2026-04-18 to 2026-04-26",
-      "location": "Naples, Florida, USA",
-      "venue": "East Naples Community Park",
-      "prize": "$400,000",
-      "description": "The largest pickleball tournament in the world returns for its 10th anniversary.",
-      "link": "https://usopenpickleballchampionships.com",
+      "id": "ppa-mesa-cup-2026",
+      "name": "PPA Carvana Mesa Cup",
+      "date": "2026-02-16 to 2026-02-22",
+      "location": "Mesa, Arizona, USA",
+      "venue": "Arizona Athletic Grounds",
+      "description": "A major Cup event on the PPA calendar, the Mesa Cup brings the heat to Arizona with the world's top pros.",
+      "link": "https://ppatour.com",
+      "image": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "category": "PPA"
+    },
+    {
+      "id": "ppa-newport-2026",
+      "name": "PPA Newport Beach Open",
+      "date": "2026-03-02 to 2026-03-08",
+      "location": "Newport Beach, California, USA",
+      "venue": "The Tennis Club at Newport Beach",
+      "description": "One of the most scenic stops on the tour, the Newport Beach Open is a fan favorite in Southern California.",
+      "link": "https://ppatour.com",
       "image": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      "category": "Major"
+      "category": "PPA"
     }
   ],
   "past": [
     {
-      "id": "ppa-indoor-2026",
-      "name": "PPA Indoor National Championships",
-      "date": "2026-01-24 to 2026-01-26",
+      "id": "ppa-lakeville-2026",
+      "name": "PPA Pickleball Central Indoor National Championships",
+      "date": "2026-01-19 to 2026-01-25",
       "location": "Lakeville, Minnesota, USA",
-      "venue": "Lakeville Arena",
-      "prize": "$200,000",
-      "description": "Indoor championship featuring climate-controlled play and a sell-out crowd.",
+      "venue": "Life Time Lakeville",
+      "description": "The first major indoor national championship of 2026, featuring elite competition in climate-controlled conditions.",
+      "category": "PPA",
+      "results": {
+        "mensSingles": {
+          "gold": "Hunter Johnson",
+          "silver": "Christopher Haworth",
+          "bronze": "Roscoe Bellamy"
+        },
+        "womensSingles": {
+          "gold": "Parris Todd",
+          "silver": "Lea Jansen",
+          "bronze": "Kaitlyn Christian"
+        },
+        "mensDoubles": {
+          "gold": "Andrei Daescu / Gabe Tardio",
+          "silver": "Christian Alshon / Hayden Patriquin",
+          "bronze": "JW Johnson / Augustus Ge"
+        },
+        "womensDoubles": {
+          "gold": "Anna Leigh Waters / Anna Bright",
+          "silver": "Tyra Black / Parris Todd",
+          "bronze": "Jorja Johnson / Jade Kawamoto"
+        },
+        "mixed": {
+          "gold": "Tyra Black / Christian Alshon",
+          "silver": "Anna Bright / Hayden Patriquin",
+          "bronze": "Jorja Johnson / JW Johnson"
+        }
+      },
+      "highlights": [
+        "Hunter Johnson dominates Men's Singles for his 7th career title",
+        "Tyra Black and Christian Alshon shock top seeds to win first Mixed Doubles gold",
+        "Anna Leigh Waters and Anna Bright secure their 16th title together",
+        "Record attendance for an indoor event in Minnesota"
+      ]
+    },
+    {
+      "id": "ppa-daytona-2025",
+      "name": "PPA Daytona Beach Open",
+      "date": "2025-12-18 to 2025-12-21",
+      "location": "Daytona Beach, Florida, USA",
+      "venue": "Pictona at Holly Hill",
+      "description": "The final major event of 2025, where stars like JW Johnson and Jorja Johnson swept the podium.",
       "category": "PPA",
       "results": {
         "mensSingles": {
           "gold": "Ben Johns",
           "silver": "Federico Staksrud",
-          "bronze": "JW Johnson"
+          "bronze": "Quang Duong"
         },
         "womensSingles": {
           "gold": "Anna Leigh Waters",
           "silver": "Catherine Parenteau",
-          "bronze": "Anna Bright"
-        },
-        "mensDoubles": {
-          "gold": "Ben Johns / Collin Johns",
-          "silver": "Dylan Frazier / JW Johnson",
-          "bronze": "Tyson McGuffin / Connor Garnett"
-        },
-        "womensDoubles": {
-          "gold": "Anna Leigh Waters / Catherine Parenteau",
-          "silver": "Anna Bright / Rachel Rohrabacher",
-          "bronze": "Lea Jansen / Jorja Johnson"
-        },
-        "mixed": {
-          "gold": "Anna Leigh Waters / Ben Johns",
-          "silver": "Catherine Parenteau / Riley Newman",
-          "bronze": "Anna Bright / JW Johnson"
-        }
-      },
-      "highlights": [
-        "Ben Johns wins his 15th consecutive singles title",
-        "Anna Leigh Waters dominates with three gold medals",
-        "Record attendance of 8,500 fans over three days"
-      ]
-    },
-    {
-      "id": "mlp-premier-2025",
-      "name": "MLP Premier Level Finals",
-      "date": "2025-12-15 to 2025-12-17",
-      "location": "Las Vegas, Nevada, USA",
-      "venue": "Mandalay Bay Convention Center",
-      "prize": "$1,000,000",
-      "description": "Season-ending championship with the highest prize pool in pickleball history.",
-      "category": "MLP",
-      "results": {
-        "champion": "New York Hustlers",
-        "runnerUp": "Texas Ranchers",
-        "thirdPlace": "Florida Smash",
-        "mvp": "Ben Johns (New York Hustlers)"
-      },
-      "highlights": [
-        "New York Hustlers win their second MLP title",
-        "Championship match goes to deciding game",
-        "Ben Johns named Finals MVP"
-      ]
-    },
-    {
-      "id": "app-vegas-2025",
-      "name": "APP Las Vegas Championships",
-      "date": "2025-11-08 to 2025-11-10",
-      "location": "Las Vegas, Nevada, USA",
-      "venue": "Downtown Las Vegas Events Center",
-      "prize": "$300,000",
-      "description": "Final APP event of 2025 featuring outdoor night matches under the lights.",
-      "category": "APP",
-      "results": {
-        "mensSingles": {
-          "gold": "Federico Staksrud",
-          "silver": "Dylan Frazier",
-          "bronze": "Ben Johns"
-        },
-        "womensSingles": {
-          "gold": "Catherine Parenteau",
-          "silver": "Anna Leigh Waters",
           "bronze": "Lea Jansen"
         },
         "mensDoubles": {
-          "gold": "Dylan Frazier / JW Johnson",
+          "gold": "JW Johnson / Augustus Ge",
           "silver": "Ben Johns / Collin Johns",
-          "bronze": "Riley Newman / Matt Wright"
+          "bronze": "Gabe Tardio / Dylan Frazier"
         },
         "womensDoubles": {
-          "gold": "Anna Bright / Rachel Rohrabacher",
-          "silver": "Anna Leigh Waters / Catherine Parenteau",
-          "bronze": "Lea Jansen / Jorja Johnson"
+          "gold": "Anna Leigh Waters / Jorja Johnson",
+          "silver": "Anna Bright / Rachel Rohrabacher",
+          "bronze": "Etta Wright / Meghan Dizon"
         },
         "mixed": {
-          "gold": "Catherine Parenteau / Riley Newman",
+          "gold": "Jorja Johnson / JW Johnson",
           "silver": "Anna Leigh Waters / Ben Johns",
-          "bronze": "Lea Jansen / Dylan Frazier"
+          "bronze": "Anna Bright / Hayden Patriquin"
         }
       },
       "highlights": [
-        "Federico Staksrud upsets Ben Johns in singles final",
-        "First night championship matches in APP history"
+        "Johnson siblings sweep the doubles categories",
+        "Augustus Ge wins first PPA gold in Men's Doubles",
+        "Sunny conditions provided a perfect end to the 2025 season"
+      ]
+    },
+    {
+      "id": "ppa-world-2025",
+      "name": "Jenius Bank Pickleball World Championships",
+      "date": "2025-11-04 to 2025-11-09",
+      "location": "Dallas, Texas, USA",
+      "venue": "Brookhaven Country Club",
+      "description": "One of the largest events in pickleball history, determining the top players on the global stage.",
+      "category": "PPA",
+      "results": {
+        "mensSingles": {
+          "gold": "Federico Staksrud",
+          "silver": "Ben Johns",
+          "bronze": "Connor Garnett"
+        },
+        "womensSingles": {
+          "gold": "Anna Leigh Waters",
+          "silver": "Lea Jansen",
+          "bronze": "Mary Brascia"
+        },
+        "mensDoubles": {
+          "gold": "Hayden Patriquin / Federico Staksrud",
+          "silver": "Dylan Frazier / JW Johnson",
+          "bronze": "Ben Johns / Collin Johns"
+        },
+        "womensDoubles": {
+          "gold": "Anna Leigh Waters / Anna Bright",
+          "silver": "Etta Wright / Meghan Dizon",
+          "bronze": "Jade Kawamoto / Jackie Kawamoto"
+        },
+        "mixed": {
+          "gold": "Anna Leigh Waters / Ben Johns",
+          "silver": "Jorja Johnson / JW Johnson",
+          "bronze": "Anna Bright / Hayden Patriquin"
+        }
+      },
+      "highlights": [
+        "Federico Staksrud cements his #1 singles ranking",
+        "Anna Leigh Waters continues her triple crown dominance",
+        "Over 4,000 amateur players competed alongside the pros"
       ]
     }
   ]
