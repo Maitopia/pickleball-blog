@@ -2,259 +2,294 @@
   "mensSingles": [
     {
       "rank": 1,
-      "player": "Ben Johns",
+      "name": "Ben Johns",
       "country": "USA",
       "points": 2850,
+      "age": 24,
       "change": 0
     },
     {
       "rank": 2,
-      "player": "Federico Staksrud",
+      "name": "Federico Staksrud",
       "country": "ARG",
       "points": 2720,
+      "age": 22,
       "change": 1
     },
     {
       "rank": 3,
-      "player": "JW Johnson",
+      "name": "JW Johnson",
       "country": "USA",
       "points": 2680,
+      "age": 26,
       "change": -1
     },
     {
       "rank": 4,
-      "player": "Dylan Frazier",
+      "name": "Dylan Frazier",
       "country": "USA",
       "points": 2550,
+      "age": 25,
       "change": 0
     },
     {
       "rank": 5,
-      "player": "Tyson McGuffin",
+      "name": "Tyson McGuffin",
       "country": "USA",
       "points": 2480,
+      "age": 34,
       "change": 2
     }
   ],
   "womensSingles": [
     {
       "rank": 1,
-      "player": "Anna Leigh Waters",
+      "name": "Anna Leigh Waters",
       "country": "USA",
       "points": 2920,
+      "age": 17,
       "change": 0
     },
     {
       "rank": 2,
-      "player": "Catherine Parenteau",
+      "name": "Catherine Parenteau",
       "country": "CAN",
       "points": 2750,
+      "age": 31,
       "change": 0
     },
     {
       "rank": 3,
-      "player": "Anna Bright",
+      "name": "Anna Bright",
       "country": "USA",
       "points": 2680,
+      "age": 24,
       "change": 1
     },
     {
       "rank": 4,
-      "player": "Lea Jansen",
+      "name": "Lea Jansen",
       "country": "USA",
       "points": 2620,
+      "age": 28,
       "change": -1
     },
     {
       "rank": 5,
-      "player": "Rachel Rohrabacher",
+      "name": "Rachel Rohrabacher",
       "country": "USA",
       "points": 2550,
+      "age": 29,
       "change": 0
     }
   ],
   "mensDoubles": [
     {
       "rank": 1,
-      "team": "Ben Johns / Collin Johns",
+      "name": "Ben Johns / Collin Johns",
       "country": "USA",
       "points": 3100,
+      "age": "24/26",
       "change": 0
     },
     {
       "rank": 2,
-      "team": "Dylan Frazier / JW Johnson",
+      "name": "Dylan Frazier / JW Johnson",
       "country": "USA",
       "points": 2950,
+      "age": "25/26",
       "change": 0
     },
     {
       "rank": 3,
-      "team": "Riley Newman / Matt Wright",
+      "name": "Riley Newman / Matt Wright",
       "country": "USA",
       "points": 2820,
+      "age": "30/28",
       "change": 1
     },
     {
       "rank": 4,
-      "team": "Tyson McGuffin / Connor Garnett",
+      "name": "Tyson McGuffin / Connor Garnett",
       "country": "USA",
       "points": 2780,
+      "age": "34/24",
       "change": -1
     },
     {
       "rank": 5,
-      "team": "Federico Staksrud / Jay Devilliers",
+      "name": "Federico Staksrud / Jay Devilliers",
       "country": "ARG/USA",
       "points": 2720,
+      "age": "22/28",
       "change": 0
     }
   ],
   "womensDoubles": [
     {
       "rank": 1,
-      "team": "Anna Leigh Waters / Catherine Parenteau",
+      "name": "Anna Leigh Waters / Catherine Parenteau",
       "country": "USA/CAN",
       "points": 3150,
+      "age": "17/31",
       "change": 0
     },
     {
       "rank": 2,
-      "team": "Anna Bright / Rachel Rohrabacher",
+      "name": "Anna Bright / Rachel Rohrabacher",
       "country": "USA",
       "points": 2880,
+      "age": "24/29",
       "change": 0
     },
     {
       "rank": 3,
-      "team": "Lea Jansen / Jorja Johnson",
+      "name": "Lea Jansen / Jorja Johnson",
       "country": "USA",
       "points": 2790,
+      "age": "28/27",
       "change": 0
     },
     {
       "rank": 4,
-      "team": "Callie Smith / Lucy Kovalova",
+      "name": "Callie Smith / Lucy Kovalova",
       "country": "USA",
       "points": 2720,
+      "age": "32/33",
       "change": 1
     },
     {
       "rank": 5,
-      "team": "Jessie Irvine / Vivienne David",
+      "name": "Jessie Irvine / Vivienne David",
       "country": "USA",
       "points": 2680,
+      "age": "25/29",
       "change": -1
     }
   ],
   "mixed": [
     {
       "rank": 1,
-      "team": "Anna Leigh Waters / Ben Johns",
+      "name": "Anna Leigh Waters / Ben Johns",
       "country": "USA",
       "points": 3200,
+      "age": "17/24",
       "change": 0
     },
     {
       "rank": 2,
-      "team": "Catherine Parenteau / Riley Newman",
+      "name": "Catherine Parenteau / Riley Newman",
       "country": "CAN/USA",
       "points": 2980,
+      "age": "31/30",
       "change": 0
     },
     {
       "rank": 3,
-      "team": "Anna Bright / JW Johnson",
+      "name": "Anna Bright / JW Johnson",
       "country": "USA",
       "points": 2850,
+      "age": "24/26",
       "change": 0
     },
     {
       "rank": 4,
-      "team": "Lea Jansen / Dylan Frazier",
+      "name": "Lea Jansen / Dylan Frazier",
       "country": "USA",
       "points": 2790,
+      "age": "28/25",
       "change": 1
     },
     {
       "rank": 5,
-      "team": "Rachel Rohrabacher / Matt Wright",
+      "name": "Rachel Rohrabacher / Matt Wright",
       "country": "USA",
       "points": 2720,
+      "age": "29/28",
       "change": -1
     }
   ],
   "seniors50": [
     {
       "rank": 1,
-      "player": "Steve Paranto",
+      "name": "Steve Paranto",
       "country": "USA",
       "points": 2650,
+      "age": 55,
       "change": 0
     },
     {
       "rank": 2,
-      "player": "Mark Renneson",
+      "name": "Mark Renneson",
       "country": "CAN",
       "points": 2580,
+      "age": 52,
       "change": 0
     },
     {
       "rank": 3,
-      "player": "Scott Moore",
+      "name": "Scott Moore",
       "country": "USA",
       "points": 2520,
+      "age": 53,
       "change": 1
     },
     {
       "rank": 4,
-      "player": "Tony Roig",
+      "name": "Tony Roig",
       "country": "USA",
       "points": 2480,
+      "age": 51,
       "change": -1
     },
     {
       "rank": 5,
-      "player": "Daniel Moore",
+      "name": "Daniel Moore",
       "country": "USA",
       "points": 2450,
+      "age": 54,
       "change": 0
     }
   ],
   "juniors": [
     {
       "rank": 1,
-      "player": "Rafa Hewett",
+      "name": "Rafa Hewett",
       "country": "USA",
       "points": 2420,
+      "age": 19,
       "change": 0
     },
     {
       "rank": 2,
-      "player": "Ava Ignatowich",
+      "name": "Ava Ignatowich",
       "country": "USA",
       "points": 2380,
+      "age": 15,
       "change": 1
     },
     {
       "rank": 3,
-      "player": "Jack Munro",
-      "country": "CAN",
+      "name": "Jack Foster",
+      "country": "USA",
       "points": 2350,
+      "age": 16,
       "change": -1
     },
     {
       "rank": 4,
-      "player": "Meghan Dizon",
+      "name": "Meghan Harwick",
       "country": "USA",
       "points": 2320,
+      "age": 17,
       "change": 0
     },
     {
       "rank": 5,
-      "player": "Christian Alshon",
+      "name": "Christian Alshon",
       "country": "USA",
       "points": 2280,
+      "age": 18,
       "change": 0
     }
   ]

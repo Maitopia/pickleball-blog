@@ -89,7 +89,7 @@ function initDefaultRankings() {
                 { rank: 10, name: "Emma Sakas", country: "USA", points: 2012, age: 16, change: 0 }
             ]
         };
-        
+
         localStorage.setItem('rankings', JSON.stringify(defaultRankings));
     }
 }
@@ -110,12 +110,12 @@ function saveRankings(allRankings) {
 function renderRankings(category = 'mensSingles') {
     const rankings = getRankings(category);
     const container = document.getElementById('rankings-table');
-    
+
     if (!rankings.length) {
         container.innerHTML = '<p style="color: var(--text-light); text-align: center; padding: 40px;">No rankings data available.</p>';
         return;
     }
-    
+
     container.innerHTML = `
         <div style="overflow-x: auto;">
             <table style="width: 100%; border-collapse: collapse;">
@@ -130,36 +130,38 @@ function renderRankings(category = 'mensSingles') {
                     </tr>
                 </thead>
                 <tbody>
-                    ${rankings.map((player, index) => {
-                        const changeIcon = player.change > 0 ? '↑' : player.change < 0 ? '↓' : '–';
-                        const changeColor = player.change > 0 ? 'var(--neon-green)' : player.change < 0 ? '#ff0055' : 'var(--text-light)';
-                        const rowBg = index % 2 === 0 ? 'var(--dark-card)' : 'var(--dark-bg)';
-                        
-                        return `
+                    ${rankings.map((p, index) => {
+        const name = p.name || p.player || p.team || 'Unknown Player';
+        const age = p.age || '—';
+        const changeIcon = p.change > 0 ? '↑' : p.change < 0 ? '↓' : '–';
+        const changeColor = p.change > 0 ? 'var(--neon-green)' : p.change < 0 ? '#ff0055' : 'var(--text-light)';
+        const rowBg = index % 2 === 0 ? 'var(--dark-card)' : 'var(--dark-bg)';
+
+        return `
                             <tr style="background: ${rowBg}; border-bottom: 1px solid var(--dark-border); transition: all 0.3s;" 
                                 onmouseover="this.style.background='rgba(0, 255, 255, 0.1)'" 
                                 onmouseout="this.style.background='${rowBg}'">
                                 <td style="padding: 15px; font-weight: bold; color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan);">
-                                    #${player.rank}
+                                    #${p.rank}
                                 </td>
                                 <td style="padding: 15px; color: var(--text); font-weight: 500;">
-                                    ${player.name}
+                                    ${name}
                                 </td>
                                 <td style="padding: 15px; color: var(--text-light);">
-                                    ${player.country}
+                                    ${p.country}
                                 </td>
                                 <td style="padding: 15px; text-align: center; color: var(--text-light);">
-                                    ${player.age}
+                                    ${age}
                                 </td>
                                 <td style="padding: 15px; text-align: center; color: var(--neon-pink); font-weight: bold;">
-                                    ${player.points.toLocaleString()}
+                                    ${p.points ? p.points.toLocaleString() : '0'}
                                 </td>
                                 <td style="padding: 15px; text-align: center; color: ${changeColor}; font-weight: bold;">
-                                    ${changeIcon} ${Math.abs(player.change)}
+                                    ${changeIcon} ${Math.abs(p.change || 0)}
                                 </td>
                             </tr>
                         `;
-                    }).join('')}
+    }).join('')}
                 </tbody>
             </table>
         </div>
@@ -173,7 +175,7 @@ function switchRanking(category) {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
-    
+
     // Update title
     const titles = {
         mensSingles: "Men's Singles",
@@ -184,9 +186,9 @@ function switchRanking(category) {
         seniors50: "Seniors 50+",
         juniors: "Juniors (Under 19)"
     };
-    
+
     document.getElementById('ranking-title').textContent = titles[category] || "Rankings";
-    
+
     // Render rankings
     renderRankings(category);
 }
@@ -199,10 +201,10 @@ function showRankings(e) {
     document.getElementById('admin-view').classList.add('hidden');
     document.getElementById('tournaments-view').classList.add('hidden');
     document.getElementById('rankings-view').classList.remove('hidden');
-    
+
     // Render default category
     renderRankings('mensSingles');
-    
+
     window.scrollTo(0, 0);
 }
 
