@@ -25,8 +25,11 @@
       "rss_feeds": [
         "https://thedinkpickleball.com/rss",
         "https://usapickleball.org/feed/",
-        "https://pickleballmax.com/feed/"
-      ]
+        "https://pickleballmax.com/feed/",
+        "https://pickleballspain.es/feed/",
+        "https://globalpickleballfederation.org/feed/"
+      ],
+      "max_age_days": 60
     }
   },
   "update_schedule": {

@@ -37,6 +37,8 @@ jobs:
           pip install -r automation/requirements.txt
       
       - name: Run content update script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python automation/update_content.py
       

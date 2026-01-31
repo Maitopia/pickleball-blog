@@ -13,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scrapers'))
 
 from articles import fetch_rss_articles, generate_sample_articles, save_articles
+from ai_post_generator import generate_daily_post
 from tournaments import generate_sample_tournaments
 from rankings import generate_sample_rankings
 
@@ -58,14 +59,20 @@ class ContentUpdater:
         articles = []
         
         try:
-            articles = fetch_rss_articles(rss_feeds, max_articles=5)
+            articles = fetch_rss_articles(rss_feeds, max_articles=1)
             print(f"  Fetched {len(articles)} articles from RSS feeds")
             
+            # Generate one original AI post
+            ai_post = generate_daily_post()
+            if ai_post:
+                articles.insert(0, ai_post) # Prepend AI post
+                print(f"  ✓ Added AI-generated original post: {ai_post['title']}")
+
             if not articles:
                 print("  No articles found in RSS feeds. Generating samples instead.")
                 articles = generate_sample_articles()
         except Exception as e:
-            print(f"  Error fetching RSS articles: {e}")
+            print(f"  Error fetching RSS or AI articles: {e}")
             print("  Using sample articles instead")
             articles = generate_sample_articles()
         

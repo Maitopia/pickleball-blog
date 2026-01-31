@@ -10,10 +10,67 @@ except ImportError:
     HAS_FEEDPARSER = False
     print("Warning: feedparser not installed. RSS fetching disabled. Install with: sudo apt install python3-pip && pip3 install feedparser")
 
-import json
+import hashlib
+import os
+import time
 from datetime import datetime
 from typing import List, Dict
-import hashlib
+import google.generativeai as genai
+from dateutil import parser
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
+
+# Configure Gemini
+api_key = os.getenv("GEMINI_API_KEY")
+if api_key:
+    genai.configure(api_key=api_key)
+
+def summarize_with_ai(title: str, raw_content: str) -> str:
+    """Uses Gemini to generate a high-quality 5-sentence summary in English."""
+    if not api_key:
+        return (raw_content[:800] + '...') if len(raw_content) > 800 else raw_content
+
+    # Add a small delay to avoid hitting rate limits
+    time.sleep(10)
+
+    model = genai.GenerativeModel('gemini-pro-latest')
+    
+    prompt = f"""
+    Title: {title}
+    Content: {raw_content[:4000]} # Limit input length
+    
+    Task:
+    1. Translate the content and title to English if it's in another language.
+    2. Write a detailed, engaging summary of the article in English.
+    3. The summary MUST be exactly 5 sentences long.
+    4. Focus on the most important pickleball-related facts or tips.
+    
+    Output ONLY the 5-sentence summary.
+    """
+
+    for attempt in range(1):
+        try:
+            response = model.generate_content(prompt)
+            return response.text.strip()
+        except Exception as e:
+            if "429" in str(e):
+                print(f"  Rate limit hit, using fallback immediately...")
+                break
+            else:
+                print(f"AI Summary Error: {e}")
+                
+    # Synthetic Fallback if AI fails or rate limited
+    print(f"  Using synthetic fallback for: {title}")
+    sentences = [
+        f"This article discusses {title} in detail.",
+        raw_content[:150] + "..." if len(raw_content) > 150 else raw_content,
+        "Mastering these concepts is essential for players looking to advance their game.",
+        "Stay tuned for more updates and deep dives into pickleball strategy and news.",
+        "Check out the full article at the source link below for complete details."
+    ]
+    return " ".join(sentences)
 
 
 def fetch_rss_articles(feed_urls: List[str], max_articles: int = 10) -> List[Dict]:
@@ -43,11 +100,22 @@ def fetch_rss_articles(feed_urls: List[str], max_articles: int = 10) -> List[Dic
                 article_id = hashlib.md5(entry.link.encode()).hexdigest()[:12]
                 
                 # Parse published date
-                published = entry.get('published_parsed', None)
-                if published:
-                    date_str = datetime(*published[:6]).strftime('%B %d, %Y')
-                else:
-                    date_str = datetime.now().strftime('%B %d, %Y')
+                published_str = entry.get('published', '')
+                if not published_str and 'updated' in entry:
+                    published_str = entry.updated
+                
+                try:
+                    dt = parser.parse(published_str)
+                except:
+                    dt = datetime.now()
+
+                # Check age (60 days limit)
+                days_old = (datetime.now() - dt.replace(tzinfo=None)).days
+                if days_old > 60:
+                    print(f"  Skipping old article: {entry.title} ({days_old} days old)")
+                    continue
+
+                date_str = dt.strftime('%B %d, %Y')
                 
                 # Extract category from tags or use default
                 category = 'News'
@@ -59,12 +127,12 @@ def fetch_rss_articles(feed_urls: List[str], max_articles: int = 10) -> List[Dic
                 if not summary and 'content' in entry:
                     summary = entry.content[0].value
                 
-                # Limit excerpt length for the card
-                excerpt = (summary[:180] + '...') if len(summary) > 180 else summary
+                # Use AI for a better summary/preview
+                print(f"  Generating AI summary for: {entry.title}...")
+                preview_content = summarize_with_ai(entry.title, summary)
                 
-                # We store a slightly longer preview for the article view, 
-                # but NOT the full article to respect copyright and encourage clicks to source
-                preview_content = (summary[:800] + '...') if len(summary) > 800 else summary
+                # Limit excerpt length for the card
+                excerpt = (preview_content[:180] + '...') if len(preview_content) > 180 else preview_content
 
                 article = {
                     'id': article_id,
